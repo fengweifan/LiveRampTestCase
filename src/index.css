@@ -75,7 +75,7 @@ ul {
 }
 
 .region-white {
-  background: rgb(255, 255, 255);
+  background: rgb(134, 134, 134);
   width: 40%;
   height: 500px;
 }
@@ -85,4 +85,39 @@ ul {
   justify-content: space-around;
   align-items: center;
   margin-top: 100px;
+}
+
+.tree{
+  position:absolute;
+  width: 20%;
+  margin-left: 200px;
+  top:300px;
+}
+
+/* .dragm{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(255, 113, 113);
+  border-radius: 50%;
+  background-color: red;
+} */
+
+.drag-handler {
+  background-color: grey;
+  height: 50px;
+  cursor: move;
+}
+
+.box {
+  background-color: green;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.drag-item{
+  position:absolute;
+  z-index: 1000;
 }
