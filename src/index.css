@@ -123,10 +123,7 @@ ul {
 }
 
 .card-box{
-  position:absolute;
-  width: 30%;
-  margin-left: 1150px;
-  top:490px;
+  position:relative;
 }
 
 .card-box-group{
@@ -138,7 +135,6 @@ ul {
 
 .group-all{
   position:absolute;
-  width: 10%;
-  margin-left: 850px;
-  top:490px;
+  margin-left: 900px;
+  top:170px;
 }

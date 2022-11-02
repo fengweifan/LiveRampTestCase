@@ -1,8 +1,8 @@
 import React from 'react';
 import Region from './Region'
 import MyTree from './MyTree'
-import Cardbox from './Cardbox'
-import CardGroup from './CardGroup'
+// import Cardbox from './Cardbox'
+// import CardGroup from './CardGroup'
 import GroupAll from './GroupAll'
 // import DragmItem from './DragmItem'
 class LiveRamp extends React.Component {
@@ -27,8 +27,8 @@ class LiveRamp extends React.Component {
                 {/* <div style={{ display: this.state.isItemShow ? 'block' : 'none' }}><DragmItem /></div> */}
                 <div><MyTree select={this.onSelect} /></div>
                 <div><GroupAll /></div>
-                <div><CardGroup /></div>
-                <div><Cardbox /></div>
+                {/* <div><CardGroup /></div> */}
+                {/* <div><Cardbox /></div> */}
                 <div className='my-tree-region'>
                     <Region color={'white'} />
                     <Region color={'green'} />
