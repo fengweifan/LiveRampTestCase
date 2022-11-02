@@ -24,15 +24,7 @@ const treeData = [
           {
             title: 'Age',
             key: '0-0-0-2',
-          },
-          {
-            title: 'Gender',
-            key: '0-0-0-3',
-          },
-          {
-            title: 'PresenceofChild',
-            key: '0-0-0-4',
-          },
+          }
         ],
       },
     ],

@@ -87,11 +87,11 @@ ul {
   margin-top: 100px;
 }
 
-.tree{
-  position:absolute;
+.tree {
+  position: absolute;
   width: 20%;
   margin-left: 200px;
-  top:300px;
+  top: 300px;
 }
 
 /* .dragm{
@@ -117,24 +117,24 @@ ul {
   flex-direction: column;
 }
 
-.drag-item{
-  position:absolute;
+.drag-item {
+  position: absolute;
   z-index: 1000;
 }
 
-.card-box{
-  position:relative;
+.card-box {
+  position: relative;
 }
 
-.card-box-group{
-  position:absolute;
-  width: 20%;
-  margin-left: 1000px;
-  top:150px;
-}
 
-.group-all{
-  position:absolute;
+.group-all {
+  position: absolute;
   margin-left: 900px;
-  top:170px;
+  top: 170px;
+}
+
+.group-child {
+  position: absolute;
+  margin-left: -15px;
+  top: 30px;
 }
