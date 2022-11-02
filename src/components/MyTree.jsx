@@ -1,6 +1,9 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Tree } from 'antd';
+import {
+  FolderOutlined,
+} from '@ant-design/icons';
 const treeData = [
   {
     title: 'My Data',
@@ -60,6 +63,9 @@ class MyTree extends React.Component {
     return (
       <div className='tree'>
         <Tree
+          icon={<FolderOutlined />}
+          defaultExpandAll
+          autoExpandParent={true}
           showIcon
           checkable={false}
           onDrop={this.onDrop}
@@ -67,6 +73,8 @@ class MyTree extends React.Component {
           onDragStart={this.onDragStart}
           onDragEnd={this.onDragEnd}
           treeData={treeData}
+          blockNode={true}
+          defaultExpandParent={true}
         />
       </div>
     );

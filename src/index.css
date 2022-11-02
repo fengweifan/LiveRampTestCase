@@ -121,3 +121,24 @@ ul {
   position:absolute;
   z-index: 1000;
 }
+
+.card-box{
+  position:absolute;
+  width: 30%;
+  margin-left: 1150px;
+  top:490px;
+}
+
+.card-box-group{
+  position:absolute;
+  width: 20%;
+  margin-left: 1000px;
+  top:150px;
+}
+
+.group-all{
+  position:absolute;
+  width: 10%;
+  margin-left: 850px;
+  top:490px;
+}
