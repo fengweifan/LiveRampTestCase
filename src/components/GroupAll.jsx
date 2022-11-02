@@ -8,15 +8,16 @@ const GroupAll = () => (
       <Card
         style={{
           width: 500,
-          height: 450
+          height: 450,
+          backgroundColor: '#9370DB'
         }}
       >
           <div className='group-child'>
           <Card
             style={{
               width: 480,
-              height: 220,
-              backgroundColor: '#9370DB'
+              height: 278,
+              backgroundColor: '#FF6EB4'
             }}>
           </Card>
         </div>

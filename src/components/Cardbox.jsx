@@ -6,10 +6,9 @@ const Cardbox = () => (
       title="Card title"
       bordered={false}
       style={{
-        marginTop:10,
+        marginTop:30,
         width: 450,
         height:100,
-        backgroundColor:'#CAE1FF'
       }}
       type="inner"
     >
