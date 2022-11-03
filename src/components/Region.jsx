@@ -7,7 +7,12 @@ class Region extends React.Component {
         this.state = {
             cardInfos: [],
         };
+        this.childRef = React.createRef();
     }
+
+    componentDidMount () {
+        console.log(this.childRef);
+      }
 
     handleDragEnter = (e) => {
         e.preventDefault();
@@ -15,6 +20,7 @@ class Region extends React.Component {
 
     handleDragLeave = (e) => {
         e.preventDefault();
+       
     }
 
     handleDrop = (e) => {
@@ -26,7 +32,7 @@ class Region extends React.Component {
         console.log("title", title)
         console.log("cardInfos", this.state.cardInfos)
         this.props.handleDataChange(title)
-
+        this.childRef.current.getOptions(title);
     }
 
     render() {
@@ -39,9 +45,9 @@ class Region extends React.Component {
                 onDrop={this.handleDrop}
             >
                 <div className='card-box'>
-                    <Cardbox title={this.state.cardInfos[0]} />
-                    <Cardbox title={this.state.cardInfos[1]} />
-                    <Cardbox title={this.state.cardInfos[2]} />
+                    <Cardbox title={this.state.cardInfos[0]} ref={this.childRef}/>
+                    <Cardbox title={this.state.cardInfos[1]} ref={this.childRef}/>
+                    <Cardbox title={this.state.cardInfos[2]} ref={this.childRef}/>
                 </div >
             </div>
         )
