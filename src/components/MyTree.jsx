@@ -50,14 +50,11 @@ class MyTree extends React.Component {
     console.log('onDragStart', e);
     console.log('title', e.node.title);
     e.event.dataTransfer.setData("title", e.node.title);
-
-
   };
 
   onDragEnd = (e) => {
     console.log('onDragEnd', e);
     console.log("MyTreeProps", this.props)
-
     for (let n = 0; n < treeData[0].children[0].children.length; n++) {
       if (treeData[0].children[0].children[n].title === this.props.changeItem) {
         treeData[0].children[0].children[n].disabled = true;
