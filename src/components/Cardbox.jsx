@@ -1,9 +1,7 @@
 import { Card } from 'antd';
 import React from 'react';
 import { Checkbox } from 'antd';
-import axios from 'axios'
 import '../mock/data.js'
-// let tmpArr = [];
 class Cardbox extends React.Component {
   constructor(props) {
     super(props);
