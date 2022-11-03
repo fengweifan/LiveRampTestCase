@@ -2,7 +2,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import { Tree } from 'antd';
 import {
-  FolderOutlined,
+  FolderOutlined, FileOutlined
 } from '@ant-design/icons';
 const treeData = [
   {
@@ -16,14 +16,17 @@ const treeData = [
           {
             title: 'AdultComposition',
             key: '0-0-0-0',
+            icon: <FileOutlined />,
           },
           {
             title: 'Education',
             key: '0-0-0-1',
+            icon: <FileOutlined />,
           },
           {
             title: 'Age',
             key: '0-0-0-2',
+            icon: <FileOutlined />,
           }
         ],
       },
