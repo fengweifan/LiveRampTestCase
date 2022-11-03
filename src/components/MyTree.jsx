@@ -8,25 +8,30 @@ const treeData = [
   {
     title: 'My Data',
     key: '0-0',
+    disabled: true,
     children: [
       {
         title: 'DeviceReach-ppid',
         key: '0-0-0',
+        disabled: true,
         children: [
           {
             title: 'AdultComposition',
             key: '0-0-0-0',
             icon: <FileOutlined />,
+            disabled: false,
           },
           {
             title: 'Education',
             key: '0-0-0-1',
             icon: <FileOutlined />,
+            disabled: false,
           },
           {
             title: 'Age',
             key: '0-0-0-2',
             icon: <FileOutlined />,
+            disabled: false,
           }
         ],
       },
@@ -34,6 +39,11 @@ const treeData = [
   },
 ];
 class MyTree extends React.Component {
+
+  constructor(props) {
+    super(props);
+    console.log('MyTree', props)
+  }
 
   onDragStart = (e) => {
     console.log('onDragStart', e);
@@ -43,6 +53,7 @@ class MyTree extends React.Component {
 
   onDragEnd = (e) => {
     console.log('onDragEnd', e);
+    console.log("MyTreeProps", this.props)
   };
 
   render() {

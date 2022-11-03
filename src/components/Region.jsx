@@ -20,15 +20,12 @@ class Region extends React.Component {
     handleDrop = (e) => {
         e.preventDefault();
         console.log('handleDrop', e)
-        let title = e.dataTransfer.getData('title');
+        let title = e.dataTransfer.getData('title')
         cardInfos.push(title);
         this.setState({ cardInfos: cardInfos })
         console.log("title", title)
         console.log("cardInfos", this.state.cardInfos)
-        this.handleChange();
-    }
-
-    handleChange = () => {
+        this.props.handleDataChange(title)
 
     }
 
