@@ -18,13 +18,13 @@ class Region extends React.Component {
         };
         this.childRef = React.createRef();
     }
+
     handleDragEnter = (e) => {
         e.preventDefault();
     }
 
     handleDragLeave = (e) => {
         e.preventDefault();
-
     }
 
     handleDrop = (e) => {
@@ -37,7 +37,6 @@ class Region extends React.Component {
         console.log("cardInfos", this.state.cardInfos)
         this.props.handleDataChange(title)
         this.getData(title)
-
         if (parentGroup.length < 2) {
             parentGroup.push(title);
             if (parentGroup.length === 2) {
@@ -75,6 +74,7 @@ class Region extends React.Component {
         let commonChlid = this.state.cardInfos[1]
         Group = '[[' + this.state.cardInfos[1] + ',' + title + '],' + parentGroup[0] + ']'
     }
+
     getData = (title) => {
         switch (title) {
             case 'AdultComposition':

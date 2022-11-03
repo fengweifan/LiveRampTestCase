@@ -1,7 +1,7 @@
 import { Card } from 'antd';
 import React from 'react';
 import { Checkbox } from 'antd';
-import '../mock/data.js'
+
 class Cardbox extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ class Cardbox extends React.Component {
 
   render() {
     return (
-      <div className="card-box" style={{ display: this.props.title ? 'inline' : 'none' }}>
+      <div style={{ display: this.props.title ? 'inline' : 'none' }}>
         <Card
           title={this.props.title + '=' + this.state.titleContent}
           bordered={false}
