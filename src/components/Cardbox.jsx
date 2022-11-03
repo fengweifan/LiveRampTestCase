@@ -3,53 +3,14 @@ import React from 'react';
 import { Checkbox } from 'antd';
 import axios from 'axios'
 import '../mock/data.js'
-
+// let tmpArr = [];
 class Cardbox extends React.Component {
   constructor(props) {
     super(props);
     console.log('props', props)
     this.state = {
       titleContent: '',
-      options: []
     }
-  }
-
-  getOptions = (title) => {
-    //get data
-    console.log('getOptions', title)
-    let tmpData = []
-    this.getData(title, tmpData)
-  }
-
-  getData = (title, tmpData) => {
-    switch (title) {
-      case 'AdultComposition':
-        axios.get('/adultComposition').then(res => {
-          console.log('AdultComposition', res.data.data.data)
-          this.setData(res.data.data.data)
-        })
-        break;
-      case 'Education':
-        axios.get('/education').then(res => {
-          console.log('Education', res.data.data.data)
-          this.setData(res.data.data.data)
-        })
-        break;
-      case 'Age':
-        axios.get('/age').then(res => {
-          console.log('Age', res.data.data.data)
-          this.setData(res.data.data.data)
-        })
-        break;
-      default:
-        //nothing
-        break;
-    }
-  }
-
-  setData(data) {
-    this.setState({ options: data })
-    console.log('options', data)
   }
 
   onChange = (checkedValues) => {
@@ -72,7 +33,7 @@ class Cardbox extends React.Component {
           }}
           type="inner"
         >
-          <div><Checkbox.Group options={this.state.options} defaultValue={['']} onChange={this.onChange} /></div>
+          <div><Checkbox.Group options={this.props.options} defaultValue={['']} onChange={this.onChange} /></div>
         </Card>
       </div>
     )

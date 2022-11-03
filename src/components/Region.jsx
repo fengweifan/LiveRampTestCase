@@ -1,26 +1,24 @@
 import React from 'react';
 import Cardbox from './Cardbox'
+import axios from 'axios'
 const cardInfos = []
+const checkOptions = []
 class Region extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             cardInfos: [],
+            options: [],
         };
         this.childRef = React.createRef();
     }
-
-    componentDidMount () {
-        console.log(this.childRef);
-      }
-
     handleDragEnter = (e) => {
         e.preventDefault();
     }
 
     handleDragLeave = (e) => {
         e.preventDefault();
-       
+
     }
 
     handleDrop = (e) => {
@@ -32,7 +30,40 @@ class Region extends React.Component {
         console.log("title", title)
         console.log("cardInfos", this.state.cardInfos)
         this.props.handleDataChange(title)
-        this.childRef.current.getOptions(title);
+        this.getData(title)
+    }
+
+    getData = (title) => {
+        switch (title) {
+            case 'AdultComposition':
+                axios.get('/adultComposition').then(res => {
+                    console.log('AdultComposition', res.data.data.data)
+                    this.setData(res.data.data.data)
+                })
+                break;
+            case 'Education':
+                axios.get('/education').then(res => {
+                    console.log('Education', res.data.data.data)
+                    this.setData(res.data.data.data)
+                })
+                break;
+            case 'Age':
+                axios.get('/age').then(res => {
+                    console.log('Age', res.data.data.data)
+                    this.setData(res.data.data.data)
+                })
+                break;
+            default:
+                //nothing
+                break;
+        }
+    }
+
+    setData(data) {
+        checkOptions.push(data)
+        this.setState({ options: checkOptions }, () => {
+            console.log('options', this.state.options)
+        })
     }
 
     render() {
@@ -45,9 +76,24 @@ class Region extends React.Component {
                 onDrop={this.handleDrop}
             >
                 <div className='card-box'>
-                    <Cardbox title={this.state.cardInfos[0]} ref={this.childRef}/>
-                    <Cardbox title={this.state.cardInfos[1]} ref={this.childRef}/>
-                    <Cardbox title={this.state.cardInfos[2]} ref={this.childRef}/>
+                    <div
+                    ><Cardbox
+                            title={this.state.cardInfos[0]}
+                            options={this.state.options[0]}
+                        />
+                    </div>
+                    <div
+                    ><Cardbox
+                            title={this.state.cardInfos[1]}
+                            options={this.state.options[1]}
+                        />
+                    </div>
+                    <div
+                    ><Cardbox
+                            title={this.state.cardInfos[2]}
+                            options={this.state.options[2]}
+                        />
+                    </div>
                 </div >
             </div>
         )
