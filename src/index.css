@@ -68,9 +68,11 @@ ul {
 }
 
 .region-green {
+  display: flex;
+  justify-content: center;
   background: rgb(175, 247, 190);
-  width: 40%;
   height: 500px;
+  width: 500px;
 }
 
 .region-white {
@@ -86,12 +88,6 @@ ul {
   margin-top: 100px;
 }
 
-.tree {
-  position: absolute;
-  width: 20%;
-  margin-left: 200px;
-  top: 300px;
-}
 
 /* .dragm{
   position: relative;

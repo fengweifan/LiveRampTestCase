@@ -31,24 +31,15 @@ const treeData = [
   },
 ];
 class MyTree extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log("---------props----------", props)
-  }
 
-  onDragStart = (event, node) => {
-    console.log('onDragStart', event, node);
-    this.props.select(true)
+  onDragStart = (e) => {
+    console.log('onDragStart', e);
+    console.log('title', e.node.title);
+    e.event.dataTransfer.setData("title", e.node.title);
   };
 
-  onDragEnd = (event, node) => {
-    console.log('onDragEnd', event, node);
-    this.props.select(false)
-  };
-
-  onDrop = (event, node, dragNode, dragNodesKeys) => {
-    console.log('onDragEnd', event, node, dragNode, dragNodesKeys);
-    this.props.select(true)
+  onDragEnd = (e) => {
+    console.log('onDragEnd', e);
   };
 
   render() {
@@ -60,7 +51,6 @@ class MyTree extends React.Component {
           autoExpandParent={true}
           showIcon
           checkable={false}
-          onDrop={this.onDrop}
           draggable={true}
           onDragStart={this.onDragStart}
           onDragEnd={this.onDragEnd}
